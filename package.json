@@ -1,0 +1,19 @@
+{
+  "name": "4dSerialDisplay",
+  "version": "0.0.1",
+  "description": "Node app for displaying memory and cpu utilization on 4d Systems small serial OLED display",
+  "author": "Peter Watkins <pdwatkins@me.com>",
+  "license": "MIT",
+  "main": "./app.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/watkinspd/4dSerialDisplay.git"
+  },
+  "dependencies": {
+    "futures": "^2.3.3",
+    "serialport": "^3.1.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}

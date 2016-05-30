@@ -11,7 +11,7 @@ http://www.4dsystems.com.au/product/uOLED_96_G2/
 http://www.4dsystems.com.au/product/4D_Programming_Cable/
 https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
 
-OSX and Nodejs
+OSX and Nodejs, or Linux and Nodejs (in my case centos7)
 
 # Install - OSX
 
@@ -31,7 +31,7 @@ npm install
 npm start <optionally specify the serial port device>
 ```
 
-# Linux - in my case Centos7 on a Minnowboard max turbot
+# Install linux - in my case Centos7 on a Minnowboard max turbot
 
 - Check which tty serial devices are on the machine
 ```

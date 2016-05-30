@@ -8,13 +8,17 @@
 //  linux  http://www.4dsystems.com.au/downloads/micro-USB/Drivers/cp210x-3.1.0.tar.gz
 //  osx http://www.4dsystems.com.au/downloads/micro-USB/Drivers/Mac_OSX_VCP_Driver.zip
 
+// to run:
+// node app.js <optional serial port device>
+// npm start <optional serial port device>
+
 var os          = require('os');
 var serialport  = require('serialport');
 var SerialPort  = serialport.SerialPort;
 
 var futures     = require('futures');
 
-var OSXSERIALPORT = '/dev/cu.SLAB_USBtoUART';
+var args = process.argv.splice(process.execArgv.length + 2);
 
 var totalMemory   = 0;
 var freeMemory    = 0;
@@ -326,14 +330,30 @@ var COLORS = [[0x00, 0x00],  // 2 dimensional array, 0 is black
               [0xFF, 0xE0],
               [0x9E, 0x66]];
 
-// list serial ports:
+// list serial ports and platform
 serialport.list(function (err, ports) {
   ports.forEach(function(port) {
     console.log(port.comName);
   });
+  console.log('os platform: ' + os.platform() );
 });
 
-var com = new SerialPort(OSXSERIALPORT, {
+var OSXSERIALPORT     = '/dev/cu.SLAB_USBtoUART';
+var CENTOSSERIALPORT  = '/dev/ttyUSB0';
+var usePort           = '';
+
+if (args[0]) {
+  usePort = args[0];
+} else {
+  if (os.platform() === 'darwin') {
+     usePort = OSXSERIALPORT;
+  } else {
+     usePort = CENTOSSERIALPORT;
+  }
+}
+
+console.log('using port: ' + usePort);
+var com = new SerialPort(usePort, {
     baudRate: 9600,
     dataBits: 8,
     parity: 'none',

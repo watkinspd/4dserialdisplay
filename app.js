@@ -3,7 +3,7 @@
 // http://www.4dsystems.com.au/product/4D_Workshop_4_IDE/downloads
 // http://www.4dsystems.com.au/productpages/GOLDELOX/downloads/GOLDELOX_serialcmdmanual_R_1_7.pdf
 // https://github.com/4dsystems/Goldelox-Serial-Linux-Library
-// driver for programming cable
+// driver for programming cable  - should only need to install driver for OSX
 //  web page http://www.4dsystems.com.au/product/4D_Programming_Cable/
 //  linux  http://www.4dsystems.com.au/downloads/micro-USB/Drivers/cp210x-3.1.0.tar.gz
 //  osx http://www.4dsystems.com.au/downloads/micro-USB/Drivers/Mac_OSX_VCP_Driver.zip
